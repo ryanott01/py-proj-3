@@ -1,0 +1,25 @@
+.melon-image {
+    height: 300px;
+    width: 300px;
+ }
+ 
+ #melon-list {
+    display: flex;
+    flex-wrap: wrap;
+ }
+nav.navbar {
+  height: 10%;
+}
+
+nav {
+  background: linear-gradient(to right, green, red);
+  background-size: cover;
+  position: relative;
+ }
+
+body {
+  background-image: url('./content/Water-melon-slices-seamless-pattern-light-background-1200x800.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}

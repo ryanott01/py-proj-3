@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <h1>My Shopping Cart</h1>
+   <table class="table table-striped mt-3">
+      <thead>
+      <tr>
+         <th>Melon Name</th>
+         <th>Quantity</th>
+         <th>Price</th>
+         <th>Total</th>
+      </tr>
+      </thead>
+      <body>
+      {% for melon in cart_melons %}
+      <tr>
+         <td>{{ melon.common_name }}</td>
+         <td>{{ melon.quantity }}<br><a class="btn btn-primary" href="{{ url_for('add_to_cart', melon_id=melon.melon_id) }}">Add another to Cart</a><a class="btn btn-primary" href="{{ url_for('remove_from_cart', melon_id=melon.melon_id) }}">remove</a></td>
+         <td>${{ "%0.2f" | format(melon.price) }}</td>
+         <td>${{ "%0.2f" | format(melon.total_cost) }}</td>
+      </tr>
+      {% endfor %}
+      </body>
+   </table>
+
+   <h3>Total: ${{ "%0.2f" | format(order_total) }}</h3>
+
+   <a href="/empty-cart" class="btn btn-primary">Empty Cart</a>
+{% endblock %}
